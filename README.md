@@ -11,8 +11,7 @@
 测试账号：admin 密码：123456
 
 ### 二维码
-![](README_files/1.jpg)
-
+![](README_files/2.png)
 ### 前端 
 
 vue + js + 原生uniApp组件 + 手动封装
@@ -20,7 +19,7 @@ vue + js + 原生uniApp组件 + 手动封装
 ### 后端
 
 uniCloud + JQL + 云函数（callFunction)
-
+![](README_files/1.png)
 
 ## 安装
 
