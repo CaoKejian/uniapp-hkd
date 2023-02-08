@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+button {
+  width: 70%;
+  background-color: #f3d163;
+  margin-top: 100rpx;
+  color: white;
+  text-align: center;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #fffae5;
+}
+.wrapper .result-item {
+  padding: 20rpx 20rpx;
+}
+.wrapper .result-item image {
+  width: 100%;
+}
+.wrapper .bmi {
+  width: 100%;
+  height: 100rpx;
+  padding-top: 50rpx;
+}
+.wrapper .bmi .bmi-text {
+  font-size: 26px;
+  color: #9E6D38;
+  letter-spacing: 3px;
+  margin-left: 40rpx;
+}
+.wrapper .input {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 0 20rpx;
+  border-radius: 25rpx;
+  margin-top: 50rpx;
+}
+.wrapper .input .box {
+  width: 90%;
+  margin: 0 auto;
+  height: 140rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .input .box:nth-child(1) {
+  margin-top: 20rpx;
+}
+.wrapper .input .box:nth-child(3) {
+  margin-bottom: 20rpx;
+}
+.wrapper .input .box text {
+  flex: 1;
+}
+.wrapper .input .box input {
+  width: 50%;
+  border-bottom: 2px solid #ffca2a;
+  text-align: center;
+}
+

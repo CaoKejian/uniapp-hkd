@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "体重变化",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "t-color-picker": "/components/t-color-picker/t-color-picker",
+    "jp-charts": "/components/jp-charts/index"
+  }
+}

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.comment-item {
+  margin-top: 40rpx;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.comment-item .avator {
+  margin-right: 30rpx;
+  width: 40px;
+  height: 40px;
+}
+.comment-item .avator image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.comment-item .wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.comment-item .wrap .username {
+  margin-top: 20rpx;
+}
+.comment-item .wrap .comment_content {
+  margin: 20rpx 0;
+  font-size: 16px;
+}
+.comment-item .wrap .info {
+  display: flex;
+  justify-content: space-between;
+  width: 400rpx;
+}
+.comment-item .wrap .info .reply-btn {
+  background-color: #e4e4e4;
+  border-radius: 30rpx;
+  padding: 0px 10px;
+  font-size: 12px;
+}
+.comment-item .icon {
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.uni-section {
+  background-color: #fffae5;
+}
+.video {
+  width: 100%;
+  background-color: #fffae5;
+  height: 100vh;
+}
+.video .video-item {
+  width: 100%;
+  height: auto;
+  padding: 30rpx 40rpx;
+  background-color: #fff;
+}
+.video .video-item .container {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.video .video-item .container .video-item-right {
+  width: 70%;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.video .video-item .container .video-item-right text {
+  width: 100%;
+}
+.video .video-item .container .video-item-right .from {
+  color: #ebc00f;
+}
+.video .video-item .container .video-item-right .mount {
+  color: #cbcbcb;
+}
+.video .video-item .container .video-item-right .title {
+  font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.video .video-item .container .video-item-left {
+  width: 30%;
+}
+.video .video-item .container .video-item-left image {
+  width: 100%;
+  height: 100%;
+}
+

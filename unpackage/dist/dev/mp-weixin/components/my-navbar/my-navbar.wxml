@@ -1,0 +1,1 @@
+<view class="container"><view class="title"><slot name="title"></slot></view><view class="image"><slot name="image"></slot></view></view>

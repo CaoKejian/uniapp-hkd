@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "回 复",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "my-comment-item": "/components/my-commentItem/my-commentItem",
+    "uni-load-more": "/uni_modules/uni-load-more/components/uni-load-more/uni-load-more",
+    "my-comment": "/components/my-comment/my-comment"
+  }
+}

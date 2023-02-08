@@ -1,0 +1,7 @@
+{
+  "name": "removeContent",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

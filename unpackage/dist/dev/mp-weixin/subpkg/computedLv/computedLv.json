@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "体脂率",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "my-lv": "/components/my-lv/my-lv"
+  }
+}

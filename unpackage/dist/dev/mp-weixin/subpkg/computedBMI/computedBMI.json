@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "BMI",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "my-b-m-i": "/components/my-BMI/my-BMI"
+  }
+}

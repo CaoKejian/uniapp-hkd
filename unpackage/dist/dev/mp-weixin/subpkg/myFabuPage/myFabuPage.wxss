@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.content {
+  background-color: #fffae5;
+  height: 100vh;
+  padding: 25rpx;
+}
+.content .container .wrapper1 {
+  height: 100vh;
+}
+.content .container .total {
+  text-align: center;
+  padding: 30rpx;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.content .container .total .total-num {
+  color: #CE5353;
+  font-size: 22px;
+  margin: 0 10rpx;
+}
+.content .item {
+  border-radius: 10rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+  margin-bottom: 35rpx;
+}
+

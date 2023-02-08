@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "课 程 表",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "my-week": "/components/my-week/my-week"
+  }
+}

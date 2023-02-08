@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.blogItem .head {
+  display: flex;
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.blogItem .head .userinfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.blogItem .head .userinfo .avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.blogItem .head .userinfo .avatar image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.blogItem .head .userinfo .name {
+  color: #9e6d38;
+  letter-spacing: 1px;
+  padding-left: 25rpx;
+  flex: 1;
+}
+.blogItem .head .userinfo .time {
+  color: #888;
+  font-size: 22rpx;
+  padding-left: 20rpx;
+}
+.blogItem .head .more {
+  padding: 5rpx;
+}
+.blogItem .head .more .iconfont {
+  font-size: 50rpx;
+  color: #888;
+}
+.blogItem .body {
+  padding: 50rpx 0 30rpx;
+}
+.blogItem .body .title {
+  font-size: 44rpx;
+  color: #000;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: justify;
+  margin-bottom: 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.blogItem .body .text {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+  text-align: justify;
+  color: #888;
+}
+.blogItem .body .text .t {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.blogItem .body .piclist {
+  display: flex;
+  padding-top: 20rpx;
+}
+.blogItem .body .piclist .pic {
+  width: 225rpx;
+  height: 225rpx;
+  margin-right: 6rpx;
+  overflow: hidden;
+}
+.blogItem .body .piclist .pic image {
+  width: 100%;
+  height: 100%;
+}
+.blogItem .body .piclist .pic:first-child {
+  border-radius: 20rpx 0 0 20rpx;
+}
+.blogItem .body .piclist .pic:last-child {
+  border-radius: 0 20rpx 20rpx 0;
+}
+.blogItem .body .piclist .pic.only {
+  border-radius: 20rpx;
+}
+.blogItem .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 26rpx;
+  color: #333;
+}
+.blogItem .info .box {
+  display: flex;
+  align-items: center;
+  padding: 15rpx 0 5rpx;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.blogItem .info .box .iconfont {
+  font-size: 40rpx;
+  padding-right: 10rpx;
+}
+.blogItem .info .active {
+  color: #9e6d38;
+}
+

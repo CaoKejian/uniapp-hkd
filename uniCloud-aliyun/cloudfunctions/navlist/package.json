@@ -1,0 +1,7 @@
+{
+  "name": "navlist",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

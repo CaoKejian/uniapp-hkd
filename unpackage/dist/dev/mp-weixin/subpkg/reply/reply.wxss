@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.reply .top {
+  padding: 30rpx;
+  border-bottom: 15rpx solid #eee;
+}
+.reply .list {
+  padding: 30rpx;
+  padding-bottom: 120rpx;
+}
+.reply .list .row {
+  padding-bottom: 15rpx;
+}
+.uni-input-placeholder {
+  letter-spacing: 1px;
+}
+

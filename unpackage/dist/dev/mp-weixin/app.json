@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/course/course",
+    "pages/my/my",
+    "pages/webview/webview",
+    "subpkg/detail/detail",
+    "subpkg/tobar/tobar",
+    "subpkg/newdetail/newdetail",
+    "subpkg/addcourse/addcourse",
+    "subpkg/signin/signin",
+    "subpkg/majorDetail/majorDetail",
+    "subpkg/testPageDetail/testPageDetail",
+    "subpkg/suggestItem/suggestItem",
+    "subpkg/ceshi/ceshi",
+    "pages/interlocution/interlocution",
+    "subpkg/edit/edit",
+    "subpkg/blogDetail/blogDetail",
+    "subpkg/editInfoPage/editInfoPage",
+    "subpkg/myFabuPage/myFabuPage",
+    "subpkg/myLikePage/myLikePage",
+    "subpkg/reply/reply",
+    "subpkg/computedDate/computedDate",
+    "subpkg/computedBMI/computedBMI",
+    "subpkg/myMessagePage/myMessagePage",
+    "subpkg/toVideoDetail/toVideoDetail",
+    "subpkg/body/body",
+    "subpkg/computedLv/computedLv",
+    "subpkg/computedWeight/computedWeight"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#ebc00f",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "selectedColor": "#9E6D38",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/topbarIcon/首页1..png",
+        "selectedIconPath": "static/topbarIcon/首页2.png"
+      },
+      {
+        "pagePath": "pages/interlocution/interlocution",
+        "text": "问答",
+        "iconPath": "static/topbarIcon/问答.png",
+        "selectedIconPath": "static/topbarIcon/问答2..png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "static/topbarIcon/课程表1.png",
+        "selectedIconPath": "static/topbarIcon/课程表2..png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/topbarIcon/我的1.png",
+        "selectedIconPath": "static/topbarIcon/我的2..png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "位置权限"
+    }
+  },
+  "usingComponents": {}
+}

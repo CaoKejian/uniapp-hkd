@@ -1,0 +1,1 @@
+<view class="wrapper"><view class="schedule-table"><block wx:if="{{forceRefresh}}"><my-week vue-id="3b395460-1" newslist="{{newslist}}" nickName="{{nickName}}" bind:__l="__l"></my-week></block></view></view>

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+#textarea {
+  width: 100%;
+  border: 2px solid #d0d0d0;
+  margin: 60rpx auto;
+  font-size: 18px;
+  font-weight: 100;
+  height: 100rpx;
+}
+.button {
+  font-size: 14px;
+  width: 300rpx;
+}
+.wenzi {
+  margin-top: 70rpx;
+}
+.first {
+  display: flex;
+  flex-direction: column;
+}
+.first .select {
+  width: 90%;
+  margin: 20% auto;
+}
+.first .select .content {
+  font-size: 14px;
+}
+.first .select .content button {
+  margin-top: 20px;
+}
+.first .select .content .geshi {
+  color: red;
+}
+

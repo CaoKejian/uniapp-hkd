@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+view {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.ceshi {
+  width: calc((100% / 7) - 2px);
+  height: 100px;
+  background: pink;
+  margin-bottom: 1px;
+}
+input {
+  border: 1px solid #000;
+}
+

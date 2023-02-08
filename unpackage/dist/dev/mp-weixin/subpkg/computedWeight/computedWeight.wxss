@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.content {
+  background-color: #fffae5;
+  height: 100vh;
+}
+.content .top {
+  padding-top: 40rpx;
+  position: relative;
+  z-index: 100;
+  right: 30rpx;
+  width: 100%;
+}
+.content .top button {
+  width: 30%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #9E6D38;
+  background-color: #ffe478;
+  border-radius: 30rpx;
+  float: right;
+  box-shadow: 2px 2px 3px #d8d8d8;
+}
+.content .bottom2 {
+  margin-top: 100rpx;
+}
+.content .bottom2 .box1-f .box1 {
+  width: 90%;
+  padding: 30rpx 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.content .bottom2 .box1-f .box1 .picker {
+  flex: 1;
+  margin-left: 50rpx;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+.content .bottom2 .box2-f .box2 {
+  width: 90%;
+  padding: 30rpx 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.content .bottom2 .box3-f .box3 {
+  width: 90%;
+  padding: 30rpx 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.content .bottom2 .box3-f .box3 .border-radius {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+.content .bottom2 .box1-f, .content .bottom2 .box2-f, .content .bottom2 .box3-f {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 30rpx;
+  margin-bottom: 50rpx;
+  color: #9E6D38;
+}
+.content .bottom2 .color {
+  display: flex;
+  flex-direction: column;
+}
+.content .bottom {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 50rpx;
+}
+.content .bottom .box {
+  border-radius: 40rpx;
+  margin-top: 60rpx;
+  width: 100%;
+  height: 300rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.content .bottom .box .center {
+  display: flex;
+  justify-content: center;
+}
+.content .bottom .box .center input {
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid #9E6D38;
+}
+.content .bottom .box .center text {
+  color: #9E6D38;
+}
+.content .bottom .box button {
+  height: 60rpx;
+  width: 200rpx;
+  line-height: 60rpx;
+  background-color: #fff5ca;
+  color: #9E6D38;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.content .bottom .box image {
+  width: 50%;
+  height: 50rpx;
+}
+

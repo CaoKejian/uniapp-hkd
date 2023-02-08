@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.wrapper {
+  width: 100%;
+  background-color: #fffae5;
+  height: 100vh;
+}
+.wrapper .item {
+  width: 100%;
+  padding-left: 70rpx;
+  color: #9E6D38;
+  font-size: 16px;
+  text-align: center;
+}
+.wrapper .item .dateName {
+  padding-top: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.wrapper .item .dateName input {
+  margin-left: 30rpx;
+  border-bottom: 1px solid #f3d163;
+  padding-left: 10rpx;
+}
+.wrapper .item .datetime-picker {
+  width: 80%;
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wrapper .item .datetime-picker .uni-date {
+  margin-left: 30rpx;
+  width: 300rpx;
+  flex: 1;
+}
+button {
+  margin-top: 100rpx;
+  background-color: #e7b203;
+  width: 70%;
+  color: #fff;
+}
+

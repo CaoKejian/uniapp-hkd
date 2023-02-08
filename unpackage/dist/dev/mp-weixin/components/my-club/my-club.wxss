@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.wrapper {
+  width: 100%;
+  background-color: #fffae5;
+}
+.prop {
+  width: 500rpx;
+  height: 300rpx;
+  background-color: #fff;
+}
+.container {
+  width: 600rpx;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 30rpx;
+}
+.container .neibu {
+  width: 100%;
+  height: 100%;
+}
+.container .neibu .mokuai {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+.container .neibu .mokuai input {
+  border-bottom: 1px solid #485cd0;
+  padding-left: 5px;
+  font-size: 13px;
+  width: 60%;
+}
+.container .neibu .mokuai .shuru {
+  width: 70%;
+  height: 160rpx;
+  border: 1px solid #485cd0;
+  padding: 5px;
+}
+.container .neibu .button {
+  display: flex;
+  justify-content: space-around;
+}
+.container .neibu .button button {
+  width: 30%;
+}
+.icon {
+  width: 100%;
+  height: 60rpx;
+  background-color: #fffae5;
+}
+.icon .add {
+  height: auto;
+  padding: 40rpx 0;
+  float: right;
+}
+.icon .add .add-left {
+  margin-right: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 13rpx 55rpx;
+  border-radius: 30rpx;
+  background-color: #fcf0c3;
+  font-size: 12px;
+}
+.icon .add .add-left image {
+  width: 18px;
+  height: 18px;
+  margin-right: 20rpx;
+}
+.icon .uni-icons {
+  float: right;
+  padding-right: 10px;
+}
+.club {
+  width: 100%;
+  margin-top: 40rpx;
+}
+.club .clubinfo {
+  height: auto;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+.club .clubinfo image {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+}
+.club .clubinfo .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 20rpx;
+}
+.club .clubinfo .info .title {
+  text-align: center;
+  color: #9E6D38;
+  font-size: 16px;
+}
+.club .clubinfo .info .content {
+  padding-top: 12rpx;
+  border-top: 1px solid #D8D8D8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+

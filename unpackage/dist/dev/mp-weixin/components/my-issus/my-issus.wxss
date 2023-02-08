@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+uni-text {
+  color: #3574ff;
+}
+.text {
+  display: block;
+  padding: 40rpx 58rpx;
+}
+.wrapper1 {
+  width: 100%;
+  background: #fff;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+.wrapper {
+  width: 100%;
+  height: calc(100vh - 47px);
+  background-color: #fffae5;
+}
+.wrapper .dai .wei-item {
+  margin-bottom: 20rpx;
+}
+.wrapper .dai .wei-item .uni-swipe {
+  width: 85%;
+  height: auto;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 15rpx;
+}
+.wrapper .dai .wei-item .uni-swipe .item {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15rpx;
+  align-items: center;
+  height: auto;
+  min-height: 80rpx;
+  padding: 10rpx 20rpx;
+}
+.wrapper .dai .wei-item .uni-swipe .item .itemName {
+  letter-spacing: 1px;
+  margin-left: 10rpx;
+  flex: 1;
+  margin-right: 10rpx;
+  max-width: 70%;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.wrapper .yi .wei-item {
+  margin-bottom: 20rpx;
+}
+.wrapper .yi .wei-item .uni-swipe {
+  width: 85%;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 15rpx;
+}
+.wrapper .yi .wei-item .uni-swipe .item {
+  display: flex;
+  border-radius: 15rpx;
+  align-items: center;
+  height: 80rpx;
+  padding: 0 20rpx;
+}
+.wrapper .yi .wei-item .uni-swipe .item .itemName {
+  letter-spacing: 1px;
+  flex: 1;
+  margin-left: 10rpx;
+  text-decoration: line-through;
+  color: #cecece;
+}
+

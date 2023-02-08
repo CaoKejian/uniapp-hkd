@@ -1,0 +1,82 @@
+{
+	"bsonType": "object",
+	"required": [
+		"article_id",
+		"user_id"
+	],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"article_id": {
+			"bsonType": "string",
+			"description": "文章ID",
+			"foreignKey": "article._id"
+		},
+		// "user_id": {
+		// 	"bsonType": "string",
+		// 	"description": "评论者ID，参考`uni-id-users` 表",
+		// 	"forceDefaultValue": {
+		// 		"$env": "uid"
+		// 	},
+		// 	"foreignKey": "article.user_id"
+		// },
+		"user_id":{
+			"bsonType": "string",
+			"title": "用户信息",
+			"description": "用户信息",
+			"label": "用户信息",
+			"trim": "both"
+		},
+		"user_nicheng":{
+			"bsonType": "string",
+			"title": "用户信息",
+			"description": "用户信息",
+			"label": "用户信息",
+			"trim": "both"
+		},
+		"articleTitle":{
+			"bsonType": "string",
+			"title": "用户信息",
+			"description": "用户信息",
+			"label": "用户信息",
+			"trim": "both"
+		},
+		"articlePic":{
+			"bsonType":"array",
+			"title": "用户信息",
+			"description": "用户信息",
+			"label": "用户信息",
+			"trim": "both"
+		},
+		"user_touxiang":{
+			"bsonType": "string",
+			"title": "用户信息",
+			"description": "用户信息",
+			"label": "用户信息",
+			"trim": "both"
+		},
+		"publish_date": {
+			"bsonType": "timestamp",
+			"title": "点赞时间",
+			"description": "点赞时间",
+			"defaultValue": {
+				"$env": "now"
+			}
+		},
+		"ip": {
+			"bsonType": "string",
+			"description": "评论发表时 IP 地址",
+			"forceDefaultValue": {
+				"$env": "clientIP"
+			}
+		}
+	},
+	"version": "0.0.1"
+}

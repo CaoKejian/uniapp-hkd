@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.dian {
+  font-size: 30px;
+  text-align: center;
+}
+.wrapper {
+  width: 100%;
+  background-color: #fffae5;
+  height: 100vh;
+}
+.wrapper .body {
+  padding-top: 20px;
+  padding-left: 15px;
+}
+.wrapper .body .title {
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+.wrapper .body .fenlei {
+  margin-top: 40px;
+}
+.wrapper .body .fenlei text {
+  padding: 3px 10px;
+  border: 2px solid #eec82a;
+  border-radius: 30rpx;
+  margin-right: 10px;
+  color: #eec82a;
+  background-color: #fff;
+}
+.wrapper .body .about {
+  margin-top: 40px;
+  display: flex;
+  font-size: 16px;
+  flex-direction: column;
+}
+.wrapper .body .jieshao {
+  width: 95%;
+  margin-top: 60px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.wrapper .body .jieshao .jieshao-title {
+  text-align: center;
+  color: #706E6B;
+  font-size: 16px;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.wrapper .body .jieshao ._hr {
+  background-color: #D8D8D8;
+}
+.wrapper .body .jieshao .jieshao-content {
+  padding: 20px;
+  text-indent: 30px;
+}
+.wrapper .body .jieshao .a {
+  padding: 20px 20px 0 20px;
+  display: flex;
+  align-items: flex-start;
+}
+.wrapper .body .jieshao .jiuye {
+  padding-bottom: 20px;
+}
+

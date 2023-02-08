@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+ .ql-blank::before {
+  font-style: normal;
+  color: #e0e0e0;
+}
+.edit {
+  padding: 30rpx;
+}
+.edit .title input {
+  font-size: 46rpx;
+  height: 120rpx;
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 30rpx;
+  color: #666;
+}
+.edit .title .placeholderClass {
+  color: #e0e0e0;
+}
+.edit .content .myEdit {
+  height: calc(100vh - 500rpx);
+  margin-bottom: 30rpx;
+}
+.edit .tools {
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  border-top: 1px solid #f4f4f4;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.edit .tools .iconfont {
+  font-size: 36rpx;
+  color: #333;
+}
+.edit .tools .iconfont.active {
+  color: #0199fe;
+}
+

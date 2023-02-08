@@ -1,0 +1,18 @@
+{
+    "id": "Flip-Countdown",
+    "displayName": "FlipCountdown翻页倒计时",
+    "version": "1.0.0",
+    "description": "FlipCountdown翻页倒计时",
+    "keywords": [
+        "FlipCountdown",
+        "倒计时",
+        "翻页",
+        "flip"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}

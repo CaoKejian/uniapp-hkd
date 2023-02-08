@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+button {
+  width: 70%;
+  background-color: #f3d163;
+  margin-top: 100rpx;
+  color: white;
+  text-align: center;
+}
+.result-body {
+  width: 85%;
+  margin: 60rpx auto;
+  height: 10vh;
+  border-radius: 30rpx;
+  background-color: #fff;
+  padding: 30rpx;
+}
+.result-body .result {
+  width: 100%;
+  position: absolute;
+}
+.result-body .result .result-f {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  left: 50%;
+  top: 100rpx;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.result-body .result .result-f .result-item {
+  font-size: 24px;
+  margin-right: 20rpx;
+}
+.bijiao {
+  height: auto;
+}
+.bijiao .bijiao-item .type {
+  font-size: 20px;
+  font-weight: bold;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #fffae5;
+}
+.wrapper .first {
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .first .one {
+  color: #B0ADAB;
+  padding: 20rpx;
+}
+.wrapper .first .one .a {
+  display: block;
+  font-size: 15px;
+}
+.wrapper .first .two {
+  color: #B0ADAB;
+  padding-left: 30rpx;
+  font-size: 15px;
+  padding-left: 120rpx;
+}
+.wrapper .bmi {
+  width: 100%;
+  height: 100rpx;
+  padding-top: 50rpx;
+}
+.wrapper .bmi .bmi-text {
+  font-size: 26px;
+  color: #9E6D38;
+  letter-spacing: 3px;
+  margin-left: 40rpx;
+}
+.wrapper .input {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 10rpx;
+  border-radius: 25rpx;
+  margin-top: 50rpx;
+}
+.wrapper .input .box {
+  height: 140rpx;
+  display: flex;
+  align-items: center;
+}
+.wrapper .input .box input {
+  border-bottom: 2px solid #ffca2a;
+  text-align: center;
+}
+

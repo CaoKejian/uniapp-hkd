@@ -1,0 +1,36 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"nickName":{
+				"bsonType": "string",
+				"title": "用户昵称",
+				"description": "用户昵称",
+				"label": "用户昵称",
+				"trim": "both"
+		},
+		"touxiang":{
+			"bsonType": "string",
+			"title": "用户昵称",
+			"description": "用户昵称",
+			"label": "用户昵称",
+			"trim": "both"
+		},
+		"dateobj":{
+			"bsonType": "object",
+			"title": "用户纪念日",
+			"description": "用户纪念日",
+			"label": "用户纪念日",
+			"trim": "both"
+		}
+	}
+}

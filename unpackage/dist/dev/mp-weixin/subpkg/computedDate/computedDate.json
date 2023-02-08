@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "值得纪念的重要日子",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-datetime-picker": "/uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker"
+  }
+}

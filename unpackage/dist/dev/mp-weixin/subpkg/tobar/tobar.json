@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance": 150,
+  "usingComponents": {
+    "my-suggess": "/components/my-suggess/my-suggess",
+    "my-test": "/components/my-test/my-test",
+    "my-course": "/components/my-course/my-course",
+    "my-consult": "/components/my-consult/my-consult",
+    "my-public": "/components/my-public/my-public",
+    "my-issus": "/components/my-issus/my-issus",
+    "my-club": "/components/my-club/my-club",
+    "my-schoollife": "/components/my-schoollife/my-schoollife"
+  }
+}
