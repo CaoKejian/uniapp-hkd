@@ -96,4 +96,22 @@
   height: 140rpx;
   border-radius: 25rpx;
 }
+.boss {
+  width: 100%;
+  padding-top: 50rpx;
+}
+.boss-item {
+  width: 95%;
+  height: 400rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 400rpx;
+  border-radius: 30rpx;
+  background-color: #fff;
+}
+.boss-item text {
+  color: #D3CECE;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
 

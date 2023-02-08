@@ -26,7 +26,8 @@
     "subpkg/toVideoDetail/toVideoDetail",
     "subpkg/body/body",
     "subpkg/computedLv/computedLv",
-    "subpkg/computedWeight/computedWeight"
+    "subpkg/computedWeight/computedWeight",
+    "subpkg/clubDetail/clubDetail"
   ],
   "subPackages": [],
   "window": {

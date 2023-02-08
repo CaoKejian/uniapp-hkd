@@ -46,7 +46,9 @@
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
                 ]
             },
-            "ios" : {},
+            "ios" : {
+                "urlschemewhitelist" : [ "baidumap", "iosamap", "qqmap" ]
+            },
             /* ios打包配置 */
             "sdkConfigs" : {
                 "maps" : {

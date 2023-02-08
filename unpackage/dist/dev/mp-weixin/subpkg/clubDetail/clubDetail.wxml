@@ -1,0 +1,1 @@
+<view class="wrapper"><view class="center"><view class="pic"><image src="{{obj.img}}" mode="aspectFill"></image></view><view class="bottom"><view class="fake"><view></view><view></view><view></view></view><view class="contents"><text class="title">{{obj.title}}</text><text class="content">{{obj.content}}</text></view></view></view></view>

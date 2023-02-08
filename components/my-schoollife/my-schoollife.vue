@@ -2,15 +2,17 @@
 	<view class="wrapper">
 
 		<view class="map-instruction">
-			<uni-section class="mb-10" title="地图展示" titleFontSize="18px" titleColor='#9E6D38' sub-title="民办博物馆 | 智慧楼 | 体育场···" type="line"></uni-section>
-			<map @click="" style="width: 100%; height: 250px;" :latitude="latitude" :longitude="longitude"
+			<uni-section class="mb-10" title="地图展示" titleFontSize="18px" titleColor='#9E6D38'
+				sub-title="民办博物馆 | 智慧楼 | 体育场···" type="line"></uni-section>
+			<map @click="openMap()" style="width: 100%; height: 250px;" :latitude="latitude" :longitude="longitude"
 				:markers="covers" show-compass=true enable-3D=true>
 			</map>
 		</view>
 
 		<view class="video-instrusction">
-			<uni-section class="mb-10" title="视频介绍" titleFontSize="18px" titleColor='#9E6D38' sub-title="学校 | 餐厅 | 快递···" type="line"></uni-section>
-		<!-- 	<view class="example-body">
+			<uni-section class="mb-10" title="视频介绍" titleFontSize="18px" titleColor='#9E6D38'
+				sub-title="学校 | 餐厅 | 快递···" type="line"></uni-section>
+			<!-- 	<view class="example-body">
 				<uni-file-picker limit="9" file-mediatype="video" title="最多选择9个视频"></uni-file-picker>
 			</view> -->
 			<!-- <view class="">
@@ -38,8 +40,7 @@
 				</view>
 			</view>
 		</view>
-
-
+		<web-view v-if="isShowWeb" :src="url"></web-view>
 	</view>
 </template>
 
@@ -49,6 +50,8 @@
 		props: ['videoClass'],
 		data() {
 			return {
+				isShowWeb: false,
+				url: '',
 				videoArr: [
 					'https://mp-eaea5aba-f234-4a78-9bab-fac0fbaedf79.cdn.bspapp.com/cloudstorage/a590d36a-9bc5-40ea-9629-b187f23b8410.mp4',
 					'https://mp-eaea5aba-f234-4a78-9bab-fac0fbaedf79.cdn.bspapp.com/cloudstorage/f607aa70-7fd9-4489-9247-8ce629e4cbc0.mp4'
@@ -62,11 +65,11 @@
 				covers: [{
 					latitude: 34.687145645198406,
 					longitude: 113.67708206176758,
-					iconPath :'../../static/location.png'
+					iconPath: '../../static/location.png'
 				}, {
 					latitude: 34.687145645198406,
 					longitude: 113.67708206176758,
-					iconPath :'../../static/location.png'
+					iconPath: '../../static/location.png'
 				}]
 
 			};
@@ -78,11 +81,20 @@
 					url: '/subpkg/toVideoDetail/toVideoDetail?id=' + id
 				})
 			},
-
-
+			openMap() {
+				uni.openLocation({
+					latitude: 34.687145,
+					longitude: 113.67708,
+					success: function () {
+						console.log('success');
+					}
+				});
+				// this.url = 'https://m.amap.com/'
+				// this.isShowWeb = true
+			}
 		},
 		created() {
-			
+
 		}
 
 	}
@@ -92,6 +104,7 @@
 	.uni-section {
 		background-color: #fffae5;
 	}
+
 	.video {
 		width: 100%;
 		background-color: #fffae5;
@@ -118,15 +131,18 @@
 					text {
 						width: 100%;
 					}
-					.from{
-						color:#ebc00f;
+
+					.from {
+						color: #ebc00f;
 					}
-					.mount{
+
+					.mount {
 						color: #cbcbcb;
 					}
+
 					.title {
 						font-size: 18px;
-					
+
 						overflow: hidden;
 						white-space: nowrap;
 						text-overflow: ellipsis;

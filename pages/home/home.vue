@@ -7,9 +7,9 @@
 		<swiper class="swiper" :indicator-dots="true" indicator-active-color="white" circular="true" :autoplay="true"
 			:interval="3000" :duration="1000">
 			<swiper-item v-for="(item,index) in piclist" :key="index">
-				<navigator class="swiper-item" :url="'/subpkg/detail/detail?img_id='+item.img_id">
+				<view class="swiper-item" >
 					<image style="width: 100%;" :src="item.img" mode="aspectFill"></image>
-				</navigator>
+				</view>
 			</swiper-item>
 		</swiper>
 
