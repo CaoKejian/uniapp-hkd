@@ -6,7 +6,8 @@
 基于 vue框架 的一套uniapp
 
 ## 项目地址
-[](https://static-mp-eaea5aba-f234-4a78-9bab-fac0fbaedf79.next.bspapp.com/h5/index.html#/)
+
+[](http://hhstu.caokejian.club/h5/index.html#/)
 测试账号：admin 密码：123456
 
 ### 二维码
