@@ -174,6 +174,7 @@
 	.wrapper {
 		width: 100%;
 		background-color: #fffae5;
+		padding:0 0 20rpx 0;
 	}
 
 	.prop {

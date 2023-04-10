@@ -1,6 +1,5 @@
 <template>
 	<view class="wrapper">
-
 		<view class="map-instruction">
 			<uni-section class="mb-10" title="地图展示" titleFontSize="18px" titleColor='#9E6D38'
 				sub-title="民办博物馆 | 智慧楼 | 体育场···" type="line"></uni-section>
@@ -34,7 +33,6 @@
 									:threshold="[60000,3600000*24*30]">
 								</uni-dateformat>
 							</text>
-
 						</view>
 					</view>
 				</view>
@@ -104,12 +102,15 @@
 	.uni-section {
 		background-color: #fffae5;
 	}
-
+	.wrapper{
+		width: 100%;
+		height: auto;
+		min-height: 100vh;
+		background-color: #fffae5;
+	}
 	.video {
 		width: 100%;
-		background-color: #fffae5;
-		height: 100vh;
-
+		height: auto;
 		.video-item {
 			width: 100%;
 			height: auto;

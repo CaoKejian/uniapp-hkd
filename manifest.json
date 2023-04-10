@@ -81,7 +81,7 @@
     "h5" : {
         "title" : "唯你黄科",
         "router" : {
-            "mode" : "hash",
+            "mode" : "history",
             "base" : "./"
         },
         "sdkConfigs" : {
@@ -90,6 +90,7 @@
                     "key" : "OLZBZ-CFSCD-ARN4E-PT6E6-IBZDH-5NBEU"
                 }
             }
-        }
+        },
+        "template" : ""
     }
 }

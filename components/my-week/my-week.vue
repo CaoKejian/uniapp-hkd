@@ -1,6 +1,5 @@
 <template>
 	<view class="wrapper">
-		<!--  -->
 		<view class="edit-button">
 			<uni-icons type="plusempty" color="#fff" size="25" @click="edit" v-show="isEditJia"></uni-icons>
 <uni-icons type="checkmarkempty" color="#fff" size="25" @click="success"  v-show="!isEditJia"></uni-icons>
@@ -20,7 +19,7 @@
 				<view class="bottom-right">
 					<view :class="item==''?'allcourse':'active'" v-for="(item,index) in newslist" :key="index"
 						@click="write(index)">
-						{{item}}
+						<span>{{item}}</span>
 					</view>
 				</view>
 			</view>
@@ -57,7 +56,7 @@
 	var classname = ''
 	export default {
 		name: "my-week",
-		props: ['newslist', 'nickName'],
+		props: ['newslist','nickName'],
 		data() {
 			return {
 				isShow: false,
@@ -107,6 +106,7 @@
 			};
 		},
 		methods: {
+
 			success() {
 				this.isEdit = false
 				this.isEditJia = true
@@ -119,7 +119,8 @@
 						refreshName: this.nickName,
 						refreshData: this.newslist
 					}
-				}).then(res => {})
+				}).then(res => {
+				})
 				setTimeout(() => {
 					uni.redirectTo({
 						url: '/pages/course/course' //写你的路径
@@ -145,7 +146,6 @@
 				// 点击编辑按钮
 				// 点击 跳出弹出框 输入课程名称 老师名 上课地址
 				// 保存这些内容 展示在页面上
-				console.log(index);
 				if(index>=0&&index<5){
 					this.week = '一'
 					this.day = index+1
@@ -204,8 +204,7 @@
 				if (this.classrooms == undefined) {
 					this.classrooms = '未知'
 				}
-				this.newslist.splice(this.linshiIndex, 1, `${this.content}   @${this.teacher}    by${this.classrooms}`)
-
+				this.newslist.splice(this.linshiIndex, 1,`${this.content}   @${this.teacher}   by${this.classrooms}`)
 				this.isWrite = false
 			},
 			Err() {
@@ -213,11 +212,10 @@
 					this.isWrite = false
 			},
 			onNavigationBarButtonTap: function(e) {
-				console.log(e.text); //提交
-
-				console.log(e.fontSize); //16px
 			}
 		},
+		created() {
+		}
 	}
 </script>
 
@@ -332,7 +330,7 @@
 					justify-content: center;
 					border-right: 1px solid #e7e7e7;
 					border-bottom: 1px solid #e7e7e7;
-
+					color: red;
 					&:nth-child(2) {
 						border-bottom: 1px solid #9E6D38;
 					}
@@ -396,12 +394,14 @@
 					height: calc(260rpx - 1rpx);
 					width: calc((100% / 7) - 1px);
 					display: flex;
-					
 					align-items: center;
 					text-align: center;
-					justify-content: center;
+					justify-content: flex-start;
 					border-right: 1px solid #e7e7e7;
 					border-bottom: 1px solid #e7e7e7;
+					span{
+						max-width: 100%; word-wrap:break-word;
+					}
 				
 				&:nth-child(2) {
 					border-bottom: 1px solid #9E6D38;

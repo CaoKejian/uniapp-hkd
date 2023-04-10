@@ -143,7 +143,6 @@
 					if(res.result.data.length==0){
 						this.uniloading='noMore'
 					}
-					
 					let idArr = redDataArr.map(item=>{
 						return item._id
 					})
@@ -151,7 +150,6 @@
 						reply_comment_id:db.command.in(idArr)
 					}).groupBy('reply_comment_id')
 					.groupField('count(*) as totalReply').get()
-					
 					redDataArr.forEach(item=>{
 						let index =replyArr.result.data.findIndex(find=>{
 							return find.reply_comment_id == item._id
@@ -161,7 +159,6 @@
 						}
 					})
 						this.commentList = redDataArr
-						console.log(this.commentList);
 						uni.hideLoading()
 				},
 				getData() {
@@ -185,7 +182,6 @@
 							title: this.detailObj.title
 						})
 					})
-
 				},
 				// 修改阅读量
 				readUpdata() {

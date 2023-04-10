@@ -2,29 +2,27 @@
 	<view class="wrapper">
 		<view class="dai">
 			<text v-if="isShowSu" class="text">待完成：{{weiItemArr.length}}</text>
-			<view class="wei-item" v-for="item,index in weiItemArr" :key="item.index">
+			<view class="wei-item" v-for="item,index in weiItemArr" :key="item.fabuDate">
 				<uni-swipe-action-item :right-options="options" :auto-close="autoClose" @click="onClick"
 					@change="swipeChange($event,item,index)">
-					<view class="item">
+					<view class="item" >
 						<checkbox @click="check(item,index)"></checkbox>
 						<uni-icons v-if="item.isImportant" color="#ffbe5b" type="star-filled" size="20"></uni-icons>
-						<view class="itemName">{{item.name}}</view>
+						<view class="itemName"><span>{{item.name}}</span></view>
 						<uni-dateformat :date="item.fabuDate" :threshold="[60000,3600000*24*30]"></uni-dateformat>
 					</view>
-
 				</uni-swipe-action-item>
-
 			</view>
 		</view>
 		<view class="yi">
 			<text v-if="isShowSu" class="text">已完成：{{yiItemArr.length}}</text>
-			<view class="wei-item" v-for="item,index in yiItemArr" :key="item.index">
+			<view class="wei-item" v-for="item,index in yiItemArr" :key="item.fabuDate">
 				<uni-swipe-action-item :right-options="options" :auto-close="autoClose" @click="onClick1"
-					@change="swipeChange($event,index)">
+					@change="swipeChange($event,item,index)">
 					<view class="item">
 						<checkbox @click="check1(item,index)" checked="false"></checkbox>
 						<uni-icons v-if="item.isImportant" color="#ffbe5b" type="star-filled" size="20"></uni-icons>
-						<view class="itemName">{{item.name}}</view>
+						<view class="itemName"><span>{{item.name}}</span></view>
 						<uni-dateformat :date="item.fabuDate" :threshold="[60000,3600000*24*30]"></uni-dateformat>
 					</view>
 				</uni-swipe-action-item>
@@ -32,7 +30,6 @@
 			</view>
 		</view>
 		<view class="wrapper1">
-				
 		<uni-easyinput ref="uipt" @confirm="goComment" suffixIcon="paperplane"  v-model="replyContent" :placeholder="placeholder"  @iconClick="goComment"></uni-easyinput>
 			</view>
 	</view>
@@ -53,7 +50,6 @@
 					return false
 				}
 			}
-
 		},
 		data() {
 			return {
@@ -105,17 +101,19 @@
 			check(item,e){
 				this.weiItemArr.splice(e,1)
 				this.yiItemArr.push(item)
-				console.log(item,e);
-				this.localStorage()
+					this.localStorage()
+					this.weiItemArr = uni.getStorageSync('weiItemArr')
 			},
 			check1(item,e){
 				this.yiItemArr.splice(e,1)
 				this.weiItemArr.push(item)
 				this.localStorage()
 			},
+			swipeChange(){
+				
+			},
 			onClick(e) {
 					// 重要显示
-					console.log(e);
 					if(e.content.text=='重要'){
 						this.selectItem.isImportant = !this.selectItem.isImportant
 						// 数组重要变为第一项
@@ -129,7 +127,6 @@
 						this.weiItemArr.unshift(this.obj)
 						this.localStorage()
 					}else if(e.content.text=='删除'){
-						console.log('删除了');
 						this.weiItemArr.splice(this.selectItemIndex,1)
 						this.localStorage()
 					}
@@ -137,7 +134,6 @@
 			},
 			onClick1(e){
 				// 重要显示
-				console.log(e);
 				if(e.content.text=='重要'){
 					this.selectItem.isImportant = !this.selectItem.isImportant
 					// 数组重要变为第一项
@@ -151,7 +147,6 @@
 					this.yiItemArr.unshift(this.obj)
 					this.localStorage()
 				}else if(e.content.text=='删除'){
-					console.log('删除了');
 					this.yiItemArr.splice(this.selectItemIndex,1)
 					this.localStorage()
 				}
@@ -176,30 +171,33 @@
 					})
 					return
 				}
+					this.inputobj = {name:"",
+					fabuDate:"",
+					checked:false,
+					isImportant:false}
 				this.inputobj.name = this.replyContent
 				this.inputobj.fabuDate = this.fabuDate
-				console.log(this.inputobj);
-				this.weiItemArr.splice(0,0,this.inputobj)
-				console.log(	this.weiItemArr);
+				this.weiItemArr.unshift(this.inputobj)
+				// this.weiItemArr.splice(0,0,this.inputobj)
 				 this.replyContent=[]
 				this.localStorage()
 			},
 			happenTimeFun(num){//时间戳数据处理
-			        let date = new Date(num);
-			         //时间戳为10位需*1000，时间戳为13位的话不需乘1000
-			        let y = date.getFullYear();
-			        let MM = date.getMonth() + 1;
-			        MM = MM < 10 ? ('0' + MM) : MM;//月补0
-			        let d = date.getDate();
-			        d = d < 10 ? ('0' + d) : d;//天补0
-			        let h = date.getHours();
-			        h = h < 10 ? ('0' + h) : h;//小时补0
-			        let m = date.getMinutes();
-			        m = m < 10 ? ('0' + m) : m;//分钟补0
-			        let s = date.getSeconds();
-			        s = s < 10 ? ('0' + s) : s;//秒补0
-							this.fabuDate = `${y}-${MM}-${d} ${h}:${m}:${s}`
-			        return y + '-' + MM + '-' + d + ' ' + h + ':' + m+ ':' + s;
+				let date = new Date(num);
+				 //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+				let y = date.getFullYear();
+				let MM = date.getMonth() + 1;
+				MM = MM < 10 ? ('0' + MM) : MM;//月补0
+				let d = date.getDate();
+				d = d < 10 ? ('0' + d) : d;//天补0
+				let h = date.getHours();
+				h = h < 10 ? ('0' + h) : h;//小时补0
+				let m = date.getMinutes();
+				m = m < 10 ? ('0' + m) : m;//分钟补0
+				let s = date.getSeconds();
+				s = s < 10 ? ('0' + s) : s;//秒补0
+				this.fabuDate = `${y}-${MM}-${d} ${h}:${m}:${s}`
+				return y + '-' + MM + '-' + d + ' ' + h + ':' + m+ ':' + s;
 			},
 		},
 		created() {
@@ -208,7 +206,7 @@
 			}
 			this.weiItemArr = uni.getStorageSync('weiItemArr', this.weiItemArr);
 			this.yiItemArr = uni.getStorageSync('yiItemArr', this.yiItemArr);
-			if(this.weiItemArr==[]&&this.yiItemArr==[]){
+			if(this.weiItemArr.length == 0||this.yiItemArr.length == 0){
 				this.localStorage()
 				this.weiItemArr = [
 					{
@@ -225,16 +223,20 @@
 						checked:true,
 						isImportant:false
 					}
-				],
-				console.log(123);
+				]
 			}
+
 		}
 	}
 </script>
 
 <style lang="scss">
+	/deep/ uni-swipe-action-item{
+		width: 100%;
+	}
 	uni-text {
 		color: #3574ff;
+
 	}
 	.text{
 		display: block;
@@ -256,17 +258,21 @@
 		background-color: #fffae5;
 
 		.dai {
-		
 			.wei-item {
+				width: 85%;
+				margin: 0 auto;
 				margin-bottom: 20rpx;
+				background-color: #fff;
+				display: flex;
 				.uni-swipe {
-					width: 85%;
+					width: 100%;
 					height: auto;
 					background-color: #fff;
 					margin: 0 auto;
 					border-radius: 15rpx;
-
 					.item {
+						width: 100%;
+						box-sizing: border-box;
 						display: flex;
 						justify-content: space-between;
 						border-radius: 15rpx;
@@ -280,7 +286,6 @@
 							margin-left: 10rpx;
 							flex: 1;
 							margin-right: 10rpx;
-							max-width: 70%;
 							word-break: break-all;
 							word-wrap: break-word;
 						}
@@ -292,21 +297,28 @@
 
 		.yi {
 			.wei-item {
+				width: 85%;
+				margin: 0 auto;
 				margin-bottom: 20rpx;
-
+				background-color: #fff;
+				display: flex;
 				.uni-swipe {
-					width: 85%;
+					width: 100%;
+					height: auto;
 					background-color: #fff;
 					margin: 0 auto;
 					border-radius: 15rpx;
-
+					
 					.item {
+						width: 100%;
 						display: flex;
+						box-sizing: border-box;
+						justify-content: space-between;
 						border-radius: 15rpx;
 						align-items: center;
-						height: 80rpx;
-						padding: 0 20rpx;
-
+						height: auto;
+						min-height: 80rpx;
+						padding: 10rpx 20rpx;
 						.itemName {
 							letter-spacing: 1px;
 							flex: 1;

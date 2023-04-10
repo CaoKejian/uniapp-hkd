@@ -28,10 +28,9 @@
 					name:name
 				}).get().then(res=>{
 					uni.hideLoading()
-					this.newslist = res.result.data[0].data
+					this.newslist = res.result.data[0].course
 				})
 			},
-
 		},
 		onLoad() {
 			this.nickName = uni.getStorageSync('name').name
@@ -54,7 +53,6 @@
 			if(this.nickName!==''){
 				const name = this.nickName
 				this.getcourse(name)
-				console.log(123);
 			this.forceRefresh= false
 					this.$nextTick(function(){
 						this.forceRefresh= true

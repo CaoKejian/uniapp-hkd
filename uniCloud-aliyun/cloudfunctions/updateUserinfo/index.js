@@ -5,7 +5,7 @@ exports.main = async (event, context) => {
 	let res = await db.collection('userinfo').where({
 		name:refreshName
 	}).update({
-		data:refreshData
+		course:refreshData
 	})
 	return res
 };

@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<scroll-view class="scroll-view_H jp_charts" scroll-x="true" :style="'width:'+width+'rpx;height:'+height+'rpx'"
+		<scroll-view class="scroll-view_H kj_charts" scroll-x="true" :style="'width:'+width+'rpx;height:'+height+'rpx'"
 			@scroll="scroll" :scroll-left="scrollLeft">
-			<view class="jp_charts" :style="'width:'+widths+'rpx;height:'+height+'rpx'">
+			<view class="kj_charts" :style="'width:'+widths+'rpx;height:'+height+'rpx'">
 				<view class="charts">
 					<view class="charts_h" v-for="(item,index) in list" :key="index" :style="'width:'+x_width+'rpx'">
 						
@@ -21,7 +21,6 @@
 							</view>
 							<view class="line" :style="'border-top: 1px dashed #B0ADAB;position: relative;width: 100%;bottom:'+setOne+'%'">
 							</view>
-							
 						</view>
 						<view class="showz" v-if="showZ" style="height: 2px;width: 100%;background-color: #9e6d38;"></view>
 						<view class="bottom-text" style="text-align: center;" :style="'font-size:'+X.size+'rpx;color:'+X.color"
@@ -210,8 +209,6 @@
 						el.bgColor= this.selectColor.color2||this.btColor
 					}
 				})
-				console.log(this.list);
-				console.log(h);
 				const linshi =this.setTrue / h * 100 +1
 				this.setOne = linshi/1.5 
 				console.log(this.setOne);
@@ -242,7 +239,6 @@
 			},
 			arrowStyle(item) {
 				let style = {}
-				
 				if (this.bgColor) {
 					style = {
 						'background':this.btColor
@@ -274,7 +270,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.jp_charts {
+	.kj_charts {
 		background-color: #fffae5;
 		height: 260px;
 		

@@ -353,7 +353,6 @@
 						value: ''
 					})
 				}else{
-					console.log(123);
 					this.list=[{
 						keyw: '理想值',
 						value: ''

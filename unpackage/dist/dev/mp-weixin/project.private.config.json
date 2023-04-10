@@ -28,6 +28,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "subpkg/tobar/tobar",
+                    "query": "id=7",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

@@ -1,13 +1,13 @@
 <template>
 	<view>
-		<my-suggess v-show="isSuggess" :list1="list1" :list2="list2" :list3="list3" :list4="list4" :list5="list5" :list6="list6"></my-suggess>
-		<my-test v-show="isTest" :testid="testid" :testList="testList"></my-test>
-		<my-course v-show="isCourse"></my-course>
-		<my-consult :lbraryOne="lbraryOne" v-show="isBody"></my-consult>
-		<my-public v-show="isPublic" :publicArr="publicArr"></my-public>
-		<my-issus v-show="isIssus"></my-issus>
-		<my-club v-show="isClub" :clubList="clubList" :nickName="nickName"></my-club>
-		<my-schoollife v-show="isSchoollife" :videoClass='videoClass'></my-schoollife>
+		<my-suggess v-if="isSuggess" :list1="list1" :list2="list2" :list3="list3" :list4="list4" :list5="list5" :list6="list6"></my-suggess>
+		<my-test v-if="isTest" :testid="testid" :testList="testList"></my-test>
+		<my-course v-if="isCourse"></my-course>
+		<my-consult :lbraryOne="lbraryOne" v-if="isBody"></my-consult>
+		<my-public v-if="isPublic" :publicArr="publicArr"></my-public>
+		<my-issus v-if="isIssus"></my-issus>
+		<my-club v-if="isClub" :clubList="clubList" :nickName="nickName"></my-club>
+		<my-schoollife v-if="isSchoollife" :videoClass='videoClass'></my-schoollife>
 	</view>
 </template>
 
@@ -28,18 +28,14 @@
 				clubList:[],
 				nickName:'',
 				
-				
 				list1:[],
 				list2:[],
 				list3:[],
 				list4:[],
 				list5:[],
 				list6:[],
-				
 				publicArr:[],
-				
 				videoClass:[],
-				
 				lbraryOne:[]
 			};
 		},
@@ -100,7 +96,6 @@
 				return
 			} else if (e.id == 1) {
 				uniCloud.database().collection('videoClass').get().then(res=>{
-					console.log(res);
 					this.videoClass = res.result.data
 				})
 				this.isSchoollife = true
@@ -113,7 +108,6 @@
 				uni.navigateTo({
 					url:'/subpkg/body/body'
 				})
-				// this.isCourse = true
 				return
 			} else if (e.id == 5) {
 				this.isBody = true

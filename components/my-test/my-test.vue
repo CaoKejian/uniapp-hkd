@@ -3,7 +3,7 @@
 		<uni-search-bar placeholder="请输入你要查找的比赛名称" bgColor="#EEEEEE" @confirm="search" @input="input" @cancel="cancel" @clear="clear"/>
 		<view class="search-list" v-show="!istrue">
 			<view class="item" v-for="(item,index) in newlist" :key="index">
-				<view class="">{{item.title}}</view>
+				<view class="" @click="go(item.address)">{{item.title}}</view>
 			</view>
 		</view>
 		<view  class="list-item" v-show="istrue"  v-for="(item,index) in testList1" :key="item.id">
@@ -11,7 +11,7 @@
 				{{item.title}}
 			</view>
 		</view>
-		<web-view v-if="isClick" :src="path"></web-view>
+		<web-view v-if="isClick" :src="path" class="web"></web-view>
 	</view>
 </template>
 
@@ -95,6 +95,9 @@
 .wrapper{
 	height: 100%;
 	background-color: #fff9e5;
+}
+.web{
+	height: 100vh;
 }
 .list-item{
 	background-color: #fff;

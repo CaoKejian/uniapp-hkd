@@ -63,7 +63,6 @@
 					this.result = resu.toFixed(2)
 					return
 				}
-					console.log(123);
 					this.a = this.yw*0.74
 					this.b = this.kg*0.082+44.74
 					this.c = this.a-this.b

@@ -5,6 +5,9 @@
   height: 100%;
   background-color: #fff9e5;
 }
+.web {
+  height: 100vh;
+}
 .list-item {
   background-color: #fff;
   width: 85%;

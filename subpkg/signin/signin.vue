@@ -6,9 +6,9 @@
 				<text class="login-logo" @click="login">Login</text>
 			</view>
 			<view class="validate">
-				<input type="text" :class="isTrue1?'active':'active-no'" @input="inputname" placeholder="用户名">
+				<input type="text" v-model="inputContent" :class="isTrue1?'active':'active-no'" @input="inputname" placeholder="用户名">
 				<text class="text1"></text>
-				<input type="text" :class="isTrue2?'active':'active-no'" @input="inputpassword" placeholder="密码">
+				<input type="text" v-model="inputContent2" :class="isTrue2?'active':'active-no'" @input="inputpassword" placeholder="密码">
 				<text class="text2"></text>
 			</view>
 			<button class="login" @click="submit">Login</button>
@@ -41,6 +41,8 @@
 		data() {
 			return {
 				// 登录
+				inputContent:'',
+				inputContent2:'',
 				isTrue1: false,
 				isTrue2: false,
 				text1: "用户名为3-6个字符",
@@ -105,7 +107,7 @@
 				this.isshowZhuce = !this.isshowZhuce
 			},
 			submit() {
-				if(this.loginUsername==""){
+				if(this.inputContent==""){
 					uni.showToast({
 						title:"用户名不能为空",
 						icon:"none"
@@ -113,7 +115,7 @@
 					this.isTrue1=true
 					return
 				}
-				if(this.loginPassword==''){
+				if(this.inputContent2==''){
 					uni.showToast({
 						title:"密码不能为空",
 						icon:"none"
@@ -121,11 +123,11 @@
 					return
 				}
 				uniCloud.database().collection('userinfo').where({
-					name:this.loginUsername
+					name:this.inputContent
 				}).get().then(res=>{
 					console.log("查询结果",res.result);
 					this.newpassword = res.result.data[0].password
-					if(this.newpassword ==this.loginPassword){
+					if(this.newpassword ==this.inputContent2){
 						uni.showToast({
 							title:'登录成功！',
 							icon:"none"
@@ -138,7 +140,7 @@
 							uni.hideLoading()
 							const id = 1
 							uni.reLaunch({
-								url:'/pages/my/my?name='+ this.loginUsername,
+								url:'/pages/my/my?name='+ this.inputContent,
 							})
 						},1000)
 						
@@ -157,6 +159,8 @@
 				})
 			},
 			gotologin() {
+				 this.inputContent = this.username
+				  this.inputContent2 = this.password
 				this.isshowZhuce = !this.isshowZhuce
 			},
 			enroll() {
@@ -223,13 +227,15 @@
 				}
 			},
 			inputname(e) {
-				this.loginUsername = e.detail.value
+				this.inputContent = e.detail.value
+				// this.loginUsername = e.detail.value
 				if(e.detail.value.length!==0){
 					this.isTrue1=false
 				}
 			},
 			inputpassword(e) {
-				this.loginPassword = e.detail.value
+				this.inputContent2 = e.detail.value
+				// this.loginPassword = e.detail.value
 				if(e.detail.value.length==0){
 					this.isTrue2=false
 				}
@@ -249,6 +255,8 @@
 				this.password = e.detail.value
 			},
 			dianji() {
+				this.inputContent = ''
+				this.inputContent2 = ''
 				this.isshowZhuce = !this.isshowZhuce
 			}
 		},

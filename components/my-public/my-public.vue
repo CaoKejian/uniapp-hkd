@@ -8,7 +8,6 @@
 			<view class="bottom">
 				<text class="bottom-item">{{item.content}}</text>
 				<text class="erweima" @click="erweima(item)">二维码</text>
-
 			</view>
 		</view>
 		<view class="drop" v-show="isDrop" @click="close">

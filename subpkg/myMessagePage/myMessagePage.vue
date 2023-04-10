@@ -10,15 +10,19 @@
 		<view class="container" v-if="current==0">
 			<view class="item" v-for="item,index in userId" :key="index" @click="gotoDetail(item.article_id)">
 				<view class="info">
-					<view class="left">
-						<image :src="item.user_touxiang"  mode="aspectFill"></image>
-						<uni-dateformat :date="item.publish_date" format="MM月dd hh:mm" :threshold="[60000,3600000*24*30]">
-							</uni-dateformat>
+					<view class="">
+						<view class="left">
+							<image :src="item.user_touxiang"  mode="aspectFill"></image>
+							
+						</view>
+						<view class="right">
+							<text class="name">{{item.user_nicheng||item.user_id}}</text>
+							<text class="some">赞了你的长文</text>
+						</view>
 					</view>
-					<view class="right">
-						<text class="name">{{item.user_nicheng}}</text>
-						<text class="some">赞了你的长文</text>
-					</view>
+					
+					<uni-dateformat :date="item.publish_date" format="MM月dd hh:mm" :threshold="[60000,3600000*24*30]">
+						</uni-dateformat>
 				</view>
 				<view class="pic">
 					<image v-if="item.articlePic.length!==0"  @error="imageError1($event, index, i)" :src="isShowTitle1?truePic1:item.articlePic[0]"  mode="aspectFill"></image>
@@ -29,18 +33,20 @@
 		<view class="container" v-if="current==1">
 			<view class="item" v-for="item,index in commentArr" :key="index" >
 				<view class="info">
-					<view class="left">
-						<image :src="item.user_touxiang"  mode="aspectFill"></image>
-						<uni-dateformat :date="item.comment_date" format="MM月dd hh:mm" :threshold="[60000,3600000*24*30]">
-							</uni-dateformat>
+					<view class="">
+						<view class="left">
+							<image :src="item.user_touxiang"  mode="aspectFill"></image>
+						</view>
+						<view class="right">
+							<text class="name">{{item.user_nicheng||item.user_id}}
+								<text class="name-bottom" v-if="!item.reply_user_id">评论：</text>
+								<text class="name-bottom" v-if="item.reply_user_id">回复：</text>
+								<text v-if="item.reply_user_id">@{{item.reply_user_id}}</text></text>
+							<text class="some">{{item.comment_content}}</text>
+						</view>
 					</view>
-					<view class="right">
-						<text class="name">{{item.user_nicehng||item.user_id}}
-							<text class="name-bottom" v-if="!item.reply_user_id">评论：</text>
-							<text class="name-bottom" v-if="item.reply_user_id">回复：</text>
-							<text v-if="item.reply_user_id">@{{item.reply_user_id}}</text></text>
-						<text class="some">{{item.comment_content}}</text>
-					</view>
+					<uni-dateformat :date="item.comment_date" format="MM月dd hh:mm" :threshold="[60000,3600000*24*30]">
+						</uni-dateformat>
 				</view>
 				<view class="pic" >
 					<image v-show="item.artPicurls.length!==0"  :src="isShowTitle?truePic:item.artPicurls[0]"  @error="imageError($event, index, i)" mode="aspectFill"></image>
@@ -120,19 +126,16 @@
 			getLikeUser() {
 				const name = uni.getStorageSync('name').name
 				db.collection('article').where(`user_id=='${name}'`).field('_id,title,picurls,touxiang,user_nicheng,user_touxiang').get().then(async res => {
-					console.log(res.result.data);
 					this.article = res.result.data
 					const idArr = this.article.map(item => {
 						return item._id
 					})
 					for (let i = 0; i < idArr.length; i++) {
-						console.log(idArr[i]);
 						const likeRed1 = await db.collection('articlelike').where(`article_id=='${idArr[i]}'`).orderBy('publish_date desc')
 							.get()
 						const oldArr = likeRed1.result.data
 						this.userId = [...oldArr, ...this.userId]
 					}
-					console.log("对比", this.userId);
 				})
 			},
 		
@@ -222,36 +225,41 @@
 				// border-top-right-radius: 30rpx;
 				.info{
 					display: flex;
-					.left{
+					flex-direction: column;
+					view{
 						display: flex;
-						flex-direction: column;
-						color: #B0ADAB;
-						image{
-							margin-bottom: 25rpx;
-							width: 80rpx;
-							height: 80rpx;
-							border-radius: 50%;
+						.left{
+							display: flex;
+							flex-direction: column;
+							color: #B0ADAB;
+							image{
+								margin-bottom: 25rpx;
+								width: 80rpx;
+								height: 80rpx;
+								border-radius: 50%;
+							}
+							
 						}
-						
-					}
-					.right{
-						flex: 1;
-						display: flex;
-						flex-direction: column;
-						margin-left: 40rpx;
-						.name{
-							color: #9E6D38;
-							font-size: 16px;
-							margin-bottom: 30rpx;
-							.name-bottom{
-								margin-left: 10rpx;
+						.right{
+							flex: 1;
+							display: flex;
+							flex-direction: column;
+							margin-left: 40rpx;
+							.name{
+								color: #9E6D38;
+								font-size: 16px;
+								margin-bottom: 30rpx;
+								.name-bottom{
+									margin-left: 10rpx;
+								}
+							}
+							.some{
+								color: #3D3D3D;
+								letter-spacing: 1px;
 							}
 						}
-						.some{
-							color: #3D3D3D;
-							letter-spacing: 1px;
-						}
 					}
+					
 				}
 				.pic{
 					width: 140rpx;

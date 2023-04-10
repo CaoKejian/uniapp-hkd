@@ -16,9 +16,9 @@
 
 vue + js + 原生uniApp组件 + 手动封装
 
-### 后端
+#77Y877Y66YDDDDDDDDDDDDDUUUUUUUUUUUDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXA68## 后端
 
-uniCloud + JQL + 云函数（callFunction)
+uniClou'R IIIIIIIIIIIIIII;''; d + JQL + 云函数（callFunction)
 ![](README_files/1.png)
 
 ## 安装

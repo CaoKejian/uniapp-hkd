@@ -24,7 +24,7 @@
 		<view class="wrapper2" v-show="navlist.length">
 			<view class="body-right">
 				<view class="box box1 box1-3">
-					<view class="box1-item" @click="gotoDetail1">
+					<view class="box1-item" @click="gotoDetail1(even2)">
 						<text class="text-one">不知道吃什么？</text>
 						<view class="text-pro">
 							<text class="text-three">雁鸣/学苑/大学......</text>
@@ -46,7 +46,7 @@
 					<text @click="gotoDate" class="chushi" v-if="!isHaveDate">值得纪念的重要日子</text>
 					<view class="dateItem" v-if="isHaveDate">
 						<text class="dateName" @click="gotoDate">{{dateobj.name}}</text>
-						<text class="dateTime">{{iDays}}<text class="tian">天</text></text>
+						<text class="dateTime" @click="gotoDate">{{iDays}}<text class="tian">天</text></text>
 					</view>
 				</view>
 			</view>
@@ -67,6 +67,7 @@
 				iDays: '',
 				isHaveDate: false,
 				name: '',
+				even2:'0',
 				even: "1",
 			};
 		},
@@ -83,9 +84,9 @@
 					url: '/subpkg/computedBMI/computedBMI'
 				})
 			},
-			gotoDetail1() {
+			gotoDetail1(even) {
 				uni.navigateTo({
-					url: '/subpkg/toVideoDetail/toVideoDetail?id=' + '63c4e51b909ffe0641c3959b'
+					url: '/subpkg/toVideoDetail/toVideoDetail?id=' + '63c4e51b909ffe0641c3959b' + '&even=' + even
 				})
 			},
 			gotoDetail2(even) {
@@ -121,7 +122,6 @@
 		},
 		onShow() {
 			uniCloud.database().collection('userinfo').where(`name=='${this.name}'`).get().then(res => {
-				console.log(res);
 				if (res.result.data[0].dateobj == undefined) {
 					this.isHaveDate = false
 				} else {
@@ -148,7 +148,8 @@
 	}
 
 	.wrapper {
-		height: 100vh;
+		min-height: 100vh;
+		height: 100%;
 		background-color: #fffae7;
 	}
 
@@ -200,6 +201,7 @@
 			width: 98%;
 			height: 240rpx;
 			letter-spacing: 2px;
+			padding-bottom: 30rpx;
 
 			.box2 {
 				display: flex;

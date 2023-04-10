@@ -14,7 +14,7 @@
 				<view class="reply-btn" v-if="!childState">
 					{{item.totalReply||0}}回复
 				</view>
-				<view class="date">
+				<view :class="childState?'date_active':'date'">
 					<uni-dateformat :date="item.comment_date" :threshold="[60000,3600000*24*30]"></uni-dateformat>
 				</view>
 				<view class="city">
@@ -109,7 +109,6 @@
 			}
 		},
 		created() {
-			console.log("??",this.item);
 		}
 	}
 </script>
@@ -150,8 +149,13 @@
 			.info {
 				display: flex;
 				justify-content: space-between;
-				width: 400rpx;
-
+				.date{
+					flex: 1;
+					padding: 0 16rpx;
+				}
+				.date_active{
+					flex: 1;
+				}
 				.reply-btn {
 					background-color: #e4e4e4;
 					border-radius: 30rpx;

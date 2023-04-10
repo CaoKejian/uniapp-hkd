@@ -45,33 +45,37 @@
 }
 .wrapper .container .item .info {
   display: flex;
+  flex-direction: column;
 }
-.wrapper .container .item .info .left {
+.wrapper .container .item .info view {
+  display: flex;
+}
+.wrapper .container .item .info view .left {
   display: flex;
   flex-direction: column;
   color: #B0ADAB;
 }
-.wrapper .container .item .info .left image {
+.wrapper .container .item .info view .left image {
   margin-bottom: 25rpx;
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
 }
-.wrapper .container .item .info .right {
+.wrapper .container .item .info view .right {
   flex: 1;
   display: flex;
   flex-direction: column;
   margin-left: 40rpx;
 }
-.wrapper .container .item .info .right .name {
+.wrapper .container .item .info view .right .name {
   color: #9E6D38;
   font-size: 16px;
   margin-bottom: 30rpx;
 }
-.wrapper .container .item .info .right .name .name-bottom {
+.wrapper .container .item .info view .right .name .name-bottom {
   margin-left: 10rpx;
 }
-.wrapper .container .item .info .right .some {
+.wrapper .container .item .info view .right .some {
   color: #3D3D3D;
   letter-spacing: 1px;
 }
