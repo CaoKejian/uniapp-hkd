@@ -15,22 +15,22 @@
 		<view class="" v-show="videoItem.length" v-if="isshowInput">
 			<my-issus :isshowMseeage='isshowMseeage' :isShowSu="isShowSu"></my-issus>
 		</view>
-		<view class="selectContent">
+		<view class="selectContent" v-show="videoItem.length" v-if="isshowSelect">
 			<span v-if="showSelected">恭喜!抽中了<span style="color: #CE5353;margin:0 18rpx;font-size:22px;font-weight: bold;">{{selected}}</span>!</span>
 			<span v-if="showIng">正在抽奖...</span>
 			<span v-if="showStart">点开始按钮抽奖</span>
 		</view>
 		<view class="ul" v-show="videoItem.length" v-if="isshowSelect">
-			<li class="li1" >螺蛳粉</li>
-			<li class="li2" >臭豆腐</li>
-			<li class="li3" >花甲粉</li>
-			<li class="li8" >烤鱼饭</li>
-			<li id="start" @click="start">开始</li>
-			<li class="li4" >上汤上面</li>
-			<li class="li7" >鸡扒饭</li>
-			<li class="li6" >重庆小面</li>
-			<li class="li5" >火锅</li>
+			<li :class="index<4?`li${index+1}`:
+									index==4?`start`:
+									`li${index}`" 
+				v-for="item,index in selectContent" :key="item" 
+				@click="handleClick(index)"
+>{{selectContent[index]}}</li>
 		</view>
+			<uni-popup ref="inputDialog" type="dialog">
+				<uni-popup-dialog mode="input" placeholder="填写你想选择的事件名!" message="成功消息" :duration="2000" :before-close="true" @close="close" @confirm="confirm"></uni-popup-dialog>
+			</uni-popup>
 	</view>
 </template>
 
@@ -48,7 +48,10 @@
 				isshowInput:false,
 				isshowSelect:false,
 				// 抽奖
-				selected:'鸡扒饭',
+				disabled:false,
+				selectContent:['螺蛳粉','臭豆腐','花甲粉','烤鱼饭','开始','上汤上面','鸡扒饭','重庆小面','火锅'],
+				content:'',
+				selected:'',
 				showSelected:false,
 				showIng:false,
 				showStart:true,
@@ -59,6 +62,9 @@
 			};
 		},
 		methods: {
+			dialogInputConfirm(){
+				this.$refs.inputDialog.open()
+			},
 			// 加载时触发
 			loadeddata() {
 				uni.showLoading({
@@ -75,7 +81,31 @@
 				})
 			},
 			// 抽奖
+			handleClick(index){
+				if(this.disabled) return
+				this.index = index
+				this.content =''
+				//点击一次 index 4 不能再点了 ，必须等 this.disabled =false 才能
+				if(index==4){
+					if(!this.disabled){
+						this.start()
+					}
+				}else{
+					this.dialogInputConfirm()
+				}
+			},
+			confirm(e){
+				this.content = e
+				if(e!==''){
+					this.selectContent.splice(this.index,1,this.content)
+				}
+				this.$refs.inputDialog.close()
+			},
+			close(){
+				this.$refs.inputDialog.close()
+			},
 			start(){
+				this.disabled = true
 				this.selected = ''
 				if(this.index!==undefined){
 					document.querySelector(`.li${this.index}`).classList.remove("active")
@@ -109,6 +139,7 @@
 				  // time > times 转动停止
 				  if (this.time > this.times) {
 				    clearInterval(this.rollTime);
+						 this.disabled = false
 						this.showIng = false
 						this.showSelected = true
 				    this.time = 0;
@@ -116,6 +147,9 @@
 				    return;
 				  }
 			}
+		},
+		mounted() {
+			const a =document.querySelector('.start').style.background='#f3d163'
 		},
 		onLoad(e) {
 			this.videoId = e.id
@@ -198,11 +232,6 @@
 	  color: #9E6D38;
 		font-weight: bold
 	}
-	
-	#start {
-	  background: #f3d163;
-	}
-	
 	.ul li.active {
 	  background: #deefff;
 	  color: #9E6D38;
