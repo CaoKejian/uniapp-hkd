@@ -25,7 +25,6 @@
 		methods:{
 			
 			getcourse(name){
-				console.log(1);
 				uniCloud.database().collection('userinfo').where({
 					name:name
 				}).get().then(res=>{
