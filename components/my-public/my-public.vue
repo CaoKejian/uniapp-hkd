@@ -25,7 +25,9 @@
 				isDrop:false,
 				picerweima:""
 			};
-
+		},
+		created() {
+			console.log(this.publicArr);
 		},
 		methods: {
 			erweima(i) {

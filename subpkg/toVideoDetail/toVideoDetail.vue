@@ -85,7 +85,6 @@
 				if(this.disabled) return
 				this.index = index
 				this.content =''
-				//点击一次 index 4 不能再点了 ，必须等 this.disabled =false 才能
 				if(index==4){
 					if(!this.disabled){
 						this.start()

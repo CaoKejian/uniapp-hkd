@@ -1,7 +1,7 @@
 <template>
 	<view class="wrapper" v-if="navlist.length">
 		<view class="">
-			<uni-notice-bar scrollable showIcon showClose single text=" 唯你小黄科小程序上新啦!,有任何问题加作者微信:YYik021,欢迎反馈!">
+			<uni-notice-bar scrollable showIcon showClose single text="唯你小黄科小程序上新啦!,有任何问题加作者微信:YYik021,欢迎反馈!">
 			</uni-notice-bar>
 		</view>
 		<swiper class="swiper" :indicator-dots="true" indicator-active-color="white" circular="true" :autoplay="true"
